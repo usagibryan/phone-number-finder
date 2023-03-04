@@ -1,21 +1,23 @@
 import re
 
+def phone_number_finder(text):
+    pattern = re.compile(r'(\(?\d{3}\)?)[- ]?(\d{3})[- ]?(\d{4})')
+    matches = re.findall(pattern, text)
+
+    phone_number_count = 0
+
+    for match in matches:
+        phone_number_count += 1
+        area_code = match[0].replace('(', '').replace(')', '')
+        phone_number = f'({area_code}) {match[1]}-{match[2]}'
+        print()
+        print(f'Phone number found: {phone_number}')
+        print(f'Area code: {area_code}')
+        print(f'Local exchange or number: {match[1]}-{match[2]}')
+
+    print()
+    print(f'Total phone numbers found: {phone_number_count}')
+
 print('Enter a message to scan for phone numbers: ')
 message = input()
-
-# phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
-# phoneNumRegex = re.compile(r'\d{3}-\d{3}-\d{4}') # shortened wtih braces
-# phoneNumRegex = re.compile(r'(\d{3})-(\d{3}-\d{4})') # grouping with parentheses
-
-# phoneNumRegex = re.compile(r'(\(\d\d\d\)) (\d\d\d-\d\d\d\d)') # area code in () and grouped
-phoneNumRegex = re.compile(r'(\(\d{3}\)) (\d{3}-\d{4})') # shortened with braces
-
-mo = phoneNumRegex.search(message)
-print('Phone number found: ' + mo.group()) # mo.group(0) will also return the entire matched text
-print('The area code is: ' + mo.group(1))
-print('The local exchange or subscriber number is: ' + mo.group(2))
-
-# print(mo.groups())
-# areaCode, mainNumber = mo.groups()
-# print(areaCode)
-# print(mainNumber)
+phone_number_finder(message)
