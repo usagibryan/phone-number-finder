@@ -5,6 +5,8 @@ This program uses regular expressions to find and return phone numbers found in 
 ### Todo
 
 - [ ] Add input validation and loop
+- [ ] Ignore duplicate numbers
+- [ ] Allow for (xxx)xxx-xxx format
 
 ### Done ✓
 
