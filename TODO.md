@@ -7,6 +7,7 @@ This program uses regular expressions to find and return phone numbers found in 
 - [ ] Add input validation and loop
 - [ ] Ignore duplicate numbers
 - [ ] Allow for (xxx)xxx-xxx format
+- [ ] Use "Optional Matching with the Question Mark" to make the regex look for phone numbers that do or do not have an area code
 
 ### Done ✓
 
