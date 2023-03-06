@@ -8,6 +8,7 @@ This program uses regular expressions to find and return phone numbers found in 
 - [ ] Ignore duplicate numbers
 - [ ] Allow for (xxx)xxx-xxx format
 - [ ] Use "Optional Matching with the Question Mark" to make the regex look for phone numbers that do or do not have an area code
+- [ ] Fix extra space between last digit in area code and ')' when (xxx) xxx-xxxx format is found
 
 ### Done ✓
 
